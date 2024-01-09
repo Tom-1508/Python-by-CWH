@@ -1,15 +1,11 @@
 import win32com.client as wincom
 
-# you can insert gaps in the narration by adding sleep calls
-import time
-
+print("Welcome to RoboSpeaker. built by Tamal")
 speak = wincom.Dispatch("SAPI.SpVoice")
 
-text = "hi souvik. what are you doing"
-speak.Speak(text)
-
-# 3 second sleep
-time.sleep(3) 
-
-text = "This text is read after 3 seconds"
-speak.Speak(text)
+while(True):
+    text = input("Enter what you want me to say: ")
+    if(text == 'q'):
+        break
+    else:
+       speak.Speak(text)
