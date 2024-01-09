@@ -1,0 +1,41 @@
+Certainly! Let's break down the code step by step:
+
+```python
+import win32com.client as wincom
+```
+
+This line imports the `win32com` library, specifically the `client` module, and aliases it as `wincom`. This library provides access to COM (Component Object Model) objects on Windows, allowing interaction with various functionalities on the system.
+
+```python
+import time
+```
+
+This line imports the `time` module, which provides functions to work with time-related tasks, such as sleeping for a specified duration.
+
+```python
+speak = wincom.Dispatch("SAPI.SpVoice")
+```
+
+Here, an instance of the SAPI (Speech API) SpVoice object is created using `wincom.Dispatch`. This object represents a text-to-speech (TTS) engine on the Windows system. It allows the script to convert text into spoken words.
+
+```python
+text = "sushovan motherfucker"
+speak.Speak(text)
+```
+
+This section sets the variable `text` to the string "sushovan motherfucker" and then uses the `Speak` method of the `SpVoice` object (`speak.Speak(text)`) to convert and speak the specified text.
+
+```python
+time.sleep(3)
+```
+
+The `time.sleep(3)` call introduces a pause in the script for 3 seconds. This is achieved using the `sleep` function from the `time` module. The script will wait for 3 seconds before proceeding to the next section.
+
+```python
+text = "This text is read after 3 seconds"
+speak.Speak(text)
+```
+
+After the sleep, a new text is assigned to the `text` variable, and the `Speak` method is called again to convert and speak the new text.
+
+In summary, this script uses the `win32com` library to access the Windows Speech API (`SAPI.SpVoice`) and convert specified text into spoken words. The script demonstrates basic text-to-speech functionality, introducing a 3-second pause between two spoken phrases using the `time.sleep` function.
